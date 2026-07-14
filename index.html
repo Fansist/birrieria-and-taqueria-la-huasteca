@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birrieria &amp; Taqueria La Huasteca | Authentic San Luis Potosi Birria in Pacific Beach, San Diego</title>
+<meta name="description" content="Birrieria &amp; Taqueria La Huasteca is Pacific Beach's first dedicated birrieria, slow-cooked lamb and beef birria, quesabirria tacos, birria ramen, and handmade tortillas from San Luis Potosi family recipes in San Diego, CA.">
+<meta name="theme-color" content="#55130f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Base — warm masa/adobe cream ground */
+    --masa: #faf1e2;
+    --masa-2: #f3e2c7;
+    --masa-3: #eaceac;
+
+    /* Primary — deep birria red, richened and less "stock salsa red" */
+    --terracotta: #bd4a28;
+    --terracotta-dark: #8a3419;
+    --birria-red: #7a1f1a;
+    --birria-red-deep: #55130f;
+    --birria-red-deepest: #340c09;
+
+    /* Accent — burnished amber (consomme / achiote) */
+    --amber: #d69639;
+    --amber-light: #ecc06e;
+    --amber-deep: #a56a1f;
+
+    /* Secondary accent — muted agave/cactus green, breaks the red monochrome */
+    --agave: #5c6b3f;
+    --agave-deep: #40492c;
+    --agave-light: #8a9a63;
+
+    /* Ink */
+    --ink: #241410;
+    --ink-soft: #4a3128;
+    --cream-line: rgba(43, 23, 18, 0.12);
+    --focus-ring: #8a3419;
+
+    --shadow-soft: 0 12px 32px rgba(52, 12, 9, 0.16);
+    --shadow-lift: 0 22px 48px rgba(52, 12, 9, 0.26);
+    --shadow-deep: 0 30px 70px rgba(52, 12, 9, 0.34);
+    --radius: 20px;
+    --radius-sm: 12px;
+    --max-w: 1180px;
+    --space-section: clamp(4rem, 3rem + 4vw, 7.5rem);
+
+    /* Fluid type scale */
+    --text-xs: clamp(0.76rem, 0.73rem + 0.15vw, 0.85rem);
+    --text-sm: clamp(0.88rem, 0.85rem + 0.15vw, 0.95rem);
+    --text-base: clamp(1rem, 0.97rem + 0.15vw, 1.08rem);
+    --text-md: clamp(1.1rem, 1.03rem + 0.35vw, 1.3rem);
+    --text-lg: clamp(1.3rem, 1.15rem + 0.75vw, 1.7rem);
+    --text-xl: clamp(1.85rem, 1.5rem + 1.75vw, 2.75rem);
+    --text-2xl: clamp(2.6rem, 1.6rem + 5vw, 5.4rem);
+  }
+
+  * { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Alegreya Sans', system-ui, sans-serif;
+    font-size: var(--text-base);
+    color: var(--ink);
+    background:
+      radial-gradient(circle, rgba(122, 31, 26, 0.05) 1px, transparent 1.2px) 0 0 / 22px 22px,
+      var(--masa);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Yeseva One', Georgia, serif;
+    font-weight: 400;
+    color: var(--birria-red-deep);
+    line-height: 1.14;
+    letter-spacing: 0.005em;
+    margin: 0 0 0.5em;
+    text-wrap: balance;
+  }
+
+  p { margin: 0 0 1em; }
+
+  a {
+    color: var(--terracotta-dark);
+  }
+
+  img { max-width: 100%; display: block; }
+
+  .container {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+  }
+
+  /* Double-ring focus indicator: stays >=3:1 visible on both light and dark
+     surfaces, since a single mid-tone color can't contrast with both. */
+  a:focus-visible,
+  button:focus-visible,
+  summary:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px var(--focus-ring);
+    border-radius: 4px;
+  }
+
+  /* Skip link */
+  .skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background: var(--birria-red);
+    color: #fff;
+    padding: 12px 20px;
+    z-index: 200;
+    border-radius: 0 0 8px 0;
+    font-weight: 700;
+  }
+  .skip-link:focus {
+    left: 0;
+  }
+
+  /* ===== Header ===== */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 241, 226, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--cream-line);
+    box-shadow: 0 4px 20px rgba(52, 12, 9, 0.06);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    gap: 16px;
+    max-width: var(--max-w);
+    margin: 0 auto;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--birria-red-deep);
+    border-radius: 8px;
+  }
+
+  .brand-mark {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+  }
+
+  .brand-text {
+    font-family: 'Yeseva One', serif;
+    font-weight: 400;
+    font-size: 1.18rem;
+    letter-spacing: 0.01em;
+    line-height: 1.1;
+  }
+  .brand-text span {
+    display: block;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+  }
+
+  .main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+
+  .main-nav a {
+    display: inline-block;
+    padding: 10px 14px;
+    text-decoration: none;
+    color: var(--ink-soft);
+    font-weight: 700;
+    font-size: var(--text-sm);
+    border-radius: 999px;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .main-nav a:hover {
+    background: var(--amber-light);
+    color: var(--birria-red-deep);
+  }
+  .main-nav a:active {
+    background: var(--amber);
+  }
+
+  .nav-cta {
+    background: var(--birria-red) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 12px rgba(122, 31, 26, 0.28);
+    transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .nav-cta:hover {
+    background: var(--terracotta-dark) !important;
+    color: #fff !important;
+    box-shadow: 0 6px 16px rgba(122, 31, 26, 0.36);
+  }
+  .nav-cta:active {
+    transform: translateY(1px);
+  }
+
+  @media (max-width: 780px) {
+    .main-nav ul {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 2px;
+    }
+    .main-nav a { padding: 8px 10px; font-size: 0.85rem; }
+    .brand-text { font-size: 1rem; }
+  }
+
+  @media (max-width: 640px) {
+    .header-inner { flex-direction: column; align-items: stretch; padding: 12px 18px; }
+    .main-nav ul { justify-content: center; }
+  }
+
+  /* ===== Hero ===== */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background:
+      linear-gradient(175deg, rgba(20, 6, 4, 0.93) 0%, rgba(52, 12, 9, 0.91) 40%, rgba(85, 19, 15, 0.86) 75%, rgba(122, 31, 26, 0.78) 100%),
+      url('photos/photo3.jpg');
+    background-size: cover;
+    background-position: center 35%;
+    background-blend-mode: normal;
+    color: #fdf1e2;
+    padding: clamp(6.5rem, 5rem + 6vw, 9.5rem) 24px clamp(5rem, 4rem + 4vw, 7rem);
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle, rgba(253, 241, 226, 0.10) 1.5px, transparent 1.6px);
+    background-size: 26px 26px;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(20, 6, 4, 0.55), transparent 40%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: var(--max-w);
+    margin: 0 auto;
+  }
+
+  .hero-copy {
+    max-width: 720px;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-style: italic;
+    font-weight: 500;
+    font-size: var(--text-md);
+    color: var(--amber-light);
+    margin-bottom: 22px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+  }
+  .hero-eyebrow::before {
+    content: "";
+    width: 44px;
+    height: 2px;
+    background: var(--amber);
+    border-radius: 2px;
+  }
+
+  .hero h1 {
+    color: #fff;
+    font-size: var(--text-2xl);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.06;
+    text-shadow: 0 4px 28px rgba(0,0,0,0.5);
+    margin-bottom: 0.4em;
+  }
+
+  .hero-tagline {
+    font-size: var(--text-md);
+    color: var(--masa-2);
+    max-width: 560px;
+    margin: 0 0 40px;
+    font-weight: 500;
+    text-shadow: 0 2px 14px rgba(0,0,0,0.4);
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 30px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0); }
+  }
+
+  .btn-primary {
+    background: linear-gradient(155deg, var(--amber-light), var(--amber) 60%, var(--amber-deep));
+    color: var(--birria-red-deepest);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.28);
+  }
+  .btn-primary:hover {
+    background: linear-gradient(155deg, #f2d18f, var(--amber-light) 60%, var(--amber));
+    box-shadow: 0 14px 32px rgba(0,0,0,0.34);
+  }
+  .btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.26);
+  }
+
+  .btn-secondary {
+    background: rgba(0,0,0,0.18);
+    color: #fdf1e2;
+    border-color: rgba(253, 241, 226, 0.55);
+    backdrop-filter: blur(6px);
+  }
+  .btn-secondary:hover {
+    background: rgba(253, 241, 226, 0.16);
+    border-color: #fdf1e2;
+  }
+  .btn-secondary:active {
+    transform: translateY(0);
+    background: rgba(253, 241, 226, 0.24);
+  }
+
+  /* ===== Section shell ===== */
+  section {
+    padding: var(--space-section) 24px;
+  }
+
+  .section-head {
+    max-width: 680px;
+    margin: 0 auto clamp(2.5rem, 2rem + 2vw, 3.5rem);
+    text-align: center;
+  }
+
+  .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-style: italic;
+    font-weight: 500;
+    font-size: var(--text-md);
+    color: var(--terracotta-dark);
+    margin-bottom: 10px;
+  }
+
+  .section-eyebrow::before,
+  .section-eyebrow::after {
+    content: "";
+    width: 26px;
+    height: 2px;
+    background: var(--amber);
+    border-radius: 2px;
+  }
+
+  .section-head h2 {
+    font-size: var(--text-xl);
+  }
+
+  .section-head p {
+    color: var(--ink-soft);
+    font-size: var(--text-md);
+  }
+
+  /* subtle reveal on scroll — text always readable at rest */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  .reveal-stagger.is-visible > * {
+    transition-delay: calc(var(--stagger-i, 0) * 70ms);
+  }
+
+  /* ===== About ===== */
+  .about {
+    background: var(--masa);
+    position: relative;
+  }
+
+  .about-grid {
+    max-width: 980px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 44px;
+    align-items: center;
+  }
+
+  @media (max-width: 820px) {
+    .about-grid { grid-template-columns: 1fr; }
+  }
+
+  .about-photo {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--cream-line);
+    position: relative;
+  }
+
+  .about-photo img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center 30%;
+  }
+
+  .about-photo figcaption {
+    background: #fff;
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+    font-style: italic;
+    padding: 12px 18px;
+    border-top: 3px solid var(--amber);
+  }
+
+  .about-card {
+    background: #fff;
+    border: 1px solid var(--cream-line);
+    border-radius: var(--radius);
+    padding: clamp(28px, 4vw, 44px);
+    box-shadow: var(--shadow-soft);
+    position: relative;
+  }
+
+  .about-card::before {
+    content: "";
+    position: absolute;
+    top: -14px;
+    left: 44px;
+    width: 60px;
+    height: 6px;
+    background: linear-gradient(90deg, var(--amber), var(--agave-light));
+    border-radius: 999px;
+  }
+
+  .about-card p {
+    color: var(--ink-soft);
+    font-size: var(--text-md);
+  }
+
+  .about-founder {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px dashed var(--cream-line);
+    font-family: 'Alegreya Sans', sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--birria-red);
+    font-size: var(--text-md);
+  }
+
+  /* ===== Services ===== */
+  .services {
+    background: var(--masa-2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    max-width: var(--max-w);
+    margin: 0 auto;
+  }
+
+  .service-card {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 30px 26px;
+    border: 1px solid var(--cream-line);
+    box-shadow: 0 2px 8px rgba(52, 12, 9, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    min-width: 0;
+  }
+
+  /* Feature cell: the birria that built the name gets the big slot */
+  .service-card--feature {
+    grid-column: span 2;
+    background:
+      radial-gradient(circle at 85% 15%, rgba(214, 150, 57, 0.22), transparent 55%),
+      linear-gradient(150deg, var(--birria-red), var(--birria-red-deep) 70%);
+    border-color: rgba(214, 150, 57, 0.45);
+  }
+  .service-card--feature h3 {
+    color: #fdf1e2;
+    font-size: var(--text-xl);
+  }
+  .service-card--feature p {
+    color: var(--masa-2);
+    font-size: var(--text-base);
+    max-width: 40ch;
+  }
+
+  @media (max-width: 980px) {
+    .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 560px) {
+    .services-grid { grid-template-columns: minmax(0, 1fr); }
+    .service-card--feature { grid-column: auto; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lift);
+      border-color: var(--amber);
+    }
+    .service-card:focus-within {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lift);
+      border-color: var(--amber);
+    }
+  }
+
+  .service-icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 18px;
+  }
+
+  .service-card h3 {
+    font-size: var(--text-lg);
+    margin-bottom: 8px;
+    color: var(--birria-red-deep);
+  }
+
+  .service-card p {
+    color: var(--ink-soft);
+    font-size: var(--text-sm);
+    margin: 0;
+  }
+
+  /* ===== Highlights strip ===== */
+  .highlights {
+    background:
+      linear-gradient(160deg, var(--terracotta-dark), var(--birria-red-deep) 55%, var(--agave-deep));
+    color: #fdf1e2;
+    padding: clamp(3.5rem, 3rem + 2vw, 4.5rem) 24px;
+    position: relative;
+  }
+
+  .highlights-grid {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+    text-align: center;
+  }
+
+  .highlight-item {
+    padding: 12px;
+    position: relative;
+  }
+
+  .highlight-item + .highlight-item::before {
+    content: "";
+    position: absolute;
+    left: -16px;
+    top: 14px;
+    bottom: 14px;
+    width: 1px;
+    background: rgba(253, 241, 226, 0.18);
+  }
+
+  @media (max-width: 640px) {
+    .highlight-item + .highlight-item::before { display: none; }
+  }
+
+  .highlight-icon {
+    width: 34px;
+    height: 34px;
+    color: var(--amber-light);
+    margin: 0 auto 12px;
+  }
+
+  .highlight-num {
+    font-family: 'Yeseva One', serif;
+    font-weight: 400;
+    font-size: clamp(1.9rem, 1.6rem + 1vw, 2.4rem);
+    color: #fff;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .highlight-label {
+    font-weight: 700;
+    font-size: var(--text-sm);
+    color: var(--masa-2);
+    letter-spacing: 0.02em;
+  }
+
+  .highlight-sub {
+    display: block;
+    font-size: var(--text-xs);
+    color: rgba(253, 241, 226, 0.72);
+    margin-top: 4px;
+    font-weight: 600;
+  }
+
+  /* ===== Menu ===== */
+  .menu-photo-wrap {
+    max-width: 900px;
+    margin: 0 auto clamp(3rem, 2.5rem + 2vw, 4rem);
+  }
+
+  .menu-photo-frame {
+    display: block;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--cream-line);
+    background: #fff;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    position: relative;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .menu-photo-frame:hover, .menu-photo-frame:focus-visible {
+      box-shadow: var(--shadow-lift);
+      transform: translateY(-4px);
+    }
+  }
+
+  .menu-photo-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .menu-photo-caption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    margin: 14px 0 0;
+  }
+
+  .menu-text {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid var(--cream-line);
+    border-radius: var(--radius);
+    padding: clamp(26px, 4vw, 44px);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .menu-text h3 {
+    font-size: var(--text-lg);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--amber);
+    color: var(--birria-red-deep);
+  }
+
+  .menu-category + .menu-category {
+    margin-top: 36px;
+  }
+
+  .menu-category-title {
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 800;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin: 0 0 14px;
+  }
+
+  .menu-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 4px;
+  }
+
+  .menu-items li {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 10px 6px;
+    margin: 0 -6px;
+    border-bottom: 1px dashed var(--cream-line);
+    border-radius: 6px;
+    transition: background 0.2s ease;
+  }
+
+  .menu-items li:hover {
+    background: var(--masa-2);
+  }
+
+  .menu-item-name {
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .menu-item-fill {
+    flex: 1;
+    border-bottom: 2px dotted var(--cream-line);
+    margin-bottom: 5px;
+    min-width: 20px;
+  }
+
+  .menu-item-price {
+    font-weight: 800;
+    color: var(--terracotta-dark);
+    white-space: nowrap;
+  }
+
+  .menu-note {
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--cream-line);
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  /* ===== Gallery ===== */
+  .gallery {
+    background: var(--masa);
+  }
+
+  .gallery-grid {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+  .gallery-grid figure {
+    margin: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--cream-line);
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .gallery-grid figure:hover,
+    .gallery-grid figure:focus-within {
+      box-shadow: var(--shadow-lift);
+      transform: translateY(-4px);
+    }
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .gallery-grid figcaption {
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+    font-style: italic;
+    padding: 10px 14px;
+    border-top: 3px solid var(--amber);
+    background: #fff;
+  }
+
+  .gallery-grid figure:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .gallery-grid figure:first-child img {
+    flex: 1;
+    height: auto;
+    min-height: 400px;
+  }
+
+  @media (max-width: 860px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .gallery-grid figure:first-child {
+      grid-column: span 2;
+      grid-row: auto;
+    }
+    .gallery-grid figure:first-child img {
+      min-height: 260px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+    .gallery-grid figure:first-child {
+      grid-column: auto;
+    }
+  }
+
+  /* ===== FAQ ===== */
+  .faq {
+    background: var(--masa-2);
+  }
+
+  .faq-list {
+    max-width: 780px;
+    margin: 0 auto;
+    display: grid;
+    gap: 16px;
+  }
+
+  .faq-item {
+    background: #fff;
+    border: 1px solid var(--cream-line);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+  }
+
+  .faq-item {
+    transition: box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 700;
+    font-size: var(--text-md);
+    color: var(--birria-red-deep);
+    transition: background 0.2s ease;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+
+  .faq-item summary:hover {
+    background: var(--masa-2);
+  }
+
+  .faq-item summary:focus-visible {
+    background: var(--masa-2);
+    outline-offset: -3px;
+  }
+
+  .faq-item[open] {
+    border-color: var(--amber);
+    box-shadow: var(--shadow-lift);
+  }
+
+  .faq-icon {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    color: var(--terracotta);
+    transition: transform 0.25s ease;
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .faq-item[open] .faq-icon { transform: none; }
+  }
+
+  .faq-answer {
+    padding: 0 24px 22px;
+    color: var(--ink-soft);
+    font-size: 1rem;
+  }
+
+  .faq-answer p { margin: 0; }
+
+  /* ===== Visit ===== */
+  .visit {
+    background: var(--masa);
+  }
+
+  .visit-grid {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+  }
+
+  @media (max-width: 860px) {
+    .visit-grid { grid-template-columns: 1fr; }
+  }
+
+  .visit-card {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: clamp(26px, 4vw, 40px);
+    border: 1px solid var(--cream-line);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .visit-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 22px;
+  }
+
+  .visit-list li {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .visit-icon {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    margin-top: 3px;
+    color: var(--terracotta);
+  }
+
+  .visit-list h3 {
+    font-size: 1.02rem;
+    margin: 0 0 4px;
+    color: var(--birria-red-deep);
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 800;
+  }
+
+  .visit-list p, .visit-list a.plain {
+    margin: 0;
+    color: var(--ink-soft);
+  }
+
+  .visit-list a {
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+  }
+  .visit-list a:hover { text-decoration: underline; }
+
+  .hours-note {
+    font-size: 0.88rem;
+    color: var(--terracotta-dark);
+    background: var(--masa-2);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-top: 6px;
+  }
+
+  .map-panel {
+    background: linear-gradient(150deg, var(--amber-light), var(--amber) 65%, var(--agave-light));
+    border-radius: var(--radius);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--birria-red-deep);
+    position: relative;
+    overflow: hidden;
+    min-height: 320px;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .map-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(122, 31, 26, 0.12) 2px, transparent 2.2px);
+    background-size: 22px 22px;
+  }
+
+  .map-pin {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .map-panel h3 {
+    position: relative;
+    z-index: 1;
+    color: var(--birria-red-deep);
+    font-size: 1.3rem;
+  }
+
+  .map-panel p {
+    position: relative;
+    z-index: 1;
+    color: var(--terracotta-dark);
+    font-weight: 700;
+  }
+
+  .map-panel .btn-primary {
+    position: relative;
+    z-index: 1;
+    background: var(--birria-red);
+    color: #fff;
+    box-shadow: 0 10px 22px rgba(89,21,17,0.25);
+  }
+  .map-panel .btn-primary:hover {
+    background: var(--birria-red-deep);
+  }
+
+  /* ===== Final CTA band ===== */
+  .cta-band {
+    background: linear-gradient(160deg, var(--birria-red-deep), var(--birria-red-deepest));
+    color: #fdf1e2;
+    text-align: center;
+    padding: clamp(3.5rem, 3rem + 2vw, 4.75rem) 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-band::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(253, 241, 226, 0.08) 1.5px, transparent 1.6px);
+    background-size: 26px 26px;
+    pointer-events: none;
+  }
+
+  .cta-band > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-band h2 {
+    color: #fff;
+  }
+
+  .cta-band p {
+    color: var(--masa-2);
+    max-width: 560px;
+    margin: 0 auto 32px;
+    font-size: var(--text-md);
+  }
+
+  /* ===== Footer ===== */
+  footer.site-footer {
+    background: #200907;
+    color: rgba(253, 241, 226, 0.75);
+    padding: 48px 24px 32px;
+  }
+
+  .footer-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .footer-brand {
+    font-family: 'Yeseva One', serif;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+
+  .footer-cols {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  .footer-col h3 {
+    color: var(--amber-light);
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+  }
+
+  .footer-col a {
+    color: rgba(253, 241, 226, 0.75);
+    text-decoration: none;
+    font-size: 0.94rem;
+    border-radius: 4px;
+  }
+  .footer-col a:hover { color: #fff; text-decoration: underline; }
+
+  .footer-bottom {
+    max-width: var(--max-w);
+    margin: 40px auto 0;
+    padding-top: 24px;
+    border-top: 1px solid rgba(253, 241, 226, 0.12);
+    font-size: 0.82rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+  }
+
+  /* Decorative divider */
+  .divider {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    height: 3px;
+    background: repeating-linear-gradient(90deg, var(--amber) 0 14px, transparent 14px 24px);
+    opacity: 0.6;
+  }
+</style>
+      <!-- SEO:START (generated by _seo_inject.js) -->
+    <link rel="canonical" href="https://fansist.github.io/birrieria-and-taqueria-la-huasteca/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Birrieria &amp; Taqueria La Huasteca" />
+    <meta property="og:title" content="Birrieria &amp; Taqueria La Huasteca in Pacific Beach" />
+    <meta property="og:description" content="Birria de res and borrego, quesabirria tacos, and even birria ramen and pizza in Pacific Beach." />
+    <meta property="og:url" content="https://fansist.github.io/birrieria-and-taqueria-la-huasteca/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://fansist.github.io/birrieria-and-taqueria-la-huasteca/photos/photo1.jpg" />
+    <meta property="og:image:alt" content="Storefront exterior at 865 Turquoise St with the original 'Coming Soon Birrieria La Huasteca' opening banner, stacked-stone facade, December 2021" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Birrieria &amp; Taqueria La Huasteca in Pacific Beach" />
+    <meta name="twitter:description" content="Birria de res and borrego, quesabirria tacos, and even birria ramen and pizza in Pacific Beach." />
+    <meta name="twitter:image" content="https://fansist.github.io/birrieria-and-taqueria-la-huasteca/photos/photo1.jpg" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"Birrieria & Taqueria La Huasteca","url":"https://fansist.github.io/birrieria-and-taqueria-la-huasteca/","image":["https://fansist.github.io/birrieria-and-taqueria-la-huasteca/photos/photo1.jpg"],"telephone":"(858) 203-3902","address":{"@type":"PostalAddress","streetAddress":"865 Turquoise St","addressLocality":"San Diego","addressRegion":"CA","postalCode":"92109","addressCountry":"US"},"description":"Pacific Beach's first dedicated birrieria, opened December 2021 by Angelina Vazquez with family recipes from San Luis Potosi, Mexico. Slow-cooked, fall-apart birria in two styles — birria de borrego (lamb) and birria de res (beef) — served as quesabirria tacos, mulitas, birria ramen, birria pizza...","areaServed":{"@type":"City","name":"San Diego"}}</script>
+    <!-- SEO:END -->
+  </head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#top" aria-label="Birrieria &amp; Taqueria La Huasteca, home">
+      <svg class="brand-mark" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+        <circle cx="24" cy="24" r="23" fill="#55130f" stroke="#d69639" stroke-width="2"/>
+        <path d="M13 28c0-6 5-11 11-11s11 5 11 11" stroke="#ecc06e" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <path d="M15 28h18" stroke="#ecc06e" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M18 15c0 2-2 2-2 4" stroke="#ecc06e" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <path d="M24 13c0 2-2 2-2 4" stroke="#ecc06e" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <path d="M30 15c0 2-2 2-2 4" stroke="#ecc06e" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-text">La Huasteca<span>Birrieria &amp; Taqueria</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#visit">Visit</a></li>
+        <li><a href="tel:+18582033902" class="nav-cta">Call Now</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero" id="top" aria-labelledby="hero-heading">
+    <div class="hero-inner">
+      <div class="hero-copy">
+      <span class="hero-eyebrow">Pacific Beach, San Diego</span>
+      <h1 id="hero-heading">Birrieria &amp; Taqueria La Huasteca</h1>
+      <p class="hero-tagline">Slow-cooked birria and handmade tortillas, made daily from family recipes carried from San Luis Potosi, Mexico.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="tel:+18582033902">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="currentColor"/></svg>
+          Call (858) 203-3902
+        </a>
+        <a class="btn btn-secondary" href="#menu">View the Menu</a>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about" aria-labelledby="about-heading">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Our Story</span>
+      <h2 id="about-heading">Pacific Beach's first birrieria</h2>
+    </div>
+    <div class="about-grid">
+      <figure class="about-photo reveal">
+        <img src="photos/photo1.jpg" alt="The stacked-stone storefront at 865 Turquoise St with the original 'Coming Soon Birrieria La Huasteca' opening banner, December 2021" decoding="async" width="600" height="750">
+        <figcaption>865 Turquoise St, opening week, December 2021</figcaption>
+      </figure>
+      <div class="about-card reveal">
+        <p>Birrieria &amp; Taqueria La Huasteca opened in December 2021 as Pacific Beach's first dedicated birrieria, founded with family recipes from San Luis Potosi, Mexico. Every day, birria de borrego (lamb) and birria de res (beef) are slow-cooked until fall-apart tender, and tortillas are pressed by hand on-site.</p>
+        <p>Beyond the birria that built the name, the kitchen turns out quesabirria tacos, mulitas, birria ramen, birria pizza, and birria burritos, plus a breakfast menu of chilaquiles and menudo, and a chicken mole rooted in San Luis Potosi tradition.</p>
+        <p class="about-founder">&ldquo;Family recipes, handmade tortillas, and San Luis Potosi heritage, brought to the beach.&rdquo;</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" role="presentation"></div>
+
+  <!-- SERVICES / MENU -->
+  <section id="menu" class="services" aria-labelledby="menu-heading">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">On the Menu</span>
+      <h2 id="menu-heading">Birria, every way</h2>
+      <p>Two styles of slow-cooked birria, served across a full menu of San Luis Potosi specialties.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card service-card--feature reveal">
+        <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#f5e6d0"/><path d="M14 28c0-8 5-13 10-13s10 5 10 13" fill="none" stroke="#7a1f1a" stroke-width="2.5" stroke-linecap="round"/><path d="M12 28h24" stroke="#c1502e" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <h3>Birria de Res &amp; Borrego</h3>
+        <p>Slow-cooked beef and lamb birria, the heart of the menu.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#f5e6d0"/><path d="M10 30c4-10 10-16 14-16s10 6 14 16" fill="none" stroke="#7a1f1a" stroke-width="2.5" stroke-linecap="round"/><circle cx="24" cy="30" r="2" fill="#c1502e"/></svg>
+        <h3>Quesabirria &amp; Birria Tacos</h3>
+        <p>Griddled, cheese-crisped tacos dipped in rich consomme.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#f5e6d0"/><path d="M14 20c0 6 4 10 10 10s10-4 10-10" fill="none" stroke="#7a1f1a" stroke-width="2.5" stroke-linecap="round"/><path d="M14 20h20" stroke="#c1502e" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <h3>Birria Ramen &amp; Pizza Birria</h3>
+        <p>Two unexpected twists layering birria into ramen and pizza.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#f5e6d0"/><rect x="14" y="16" width="20" height="16" rx="6" fill="none" stroke="#7a1f1a" stroke-width="2.5"/></svg>
+        <h3>Burritos, Mulitas &amp; Gorditas</h3>
+        <p>Birria burritos, mulitas, and gorditas built for sharing.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#f5e6d0"/><path d="M14 22a10 10 0 0 1 20 0" fill="none" stroke="#7a1f1a" stroke-width="2.5" stroke-linecap="round"/><path d="M14 22h20v4a10 10 0 0 1-20 0z" fill="none" stroke="#c1502e" stroke-width="2.5"/></svg>
+        <h3>Chilaquiles &amp; Mexican Breakfast</h3>
+        <p>A morning menu of chilaquiles and menudo.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#f5e6d0"/><path d="M16 18c4 6 12 6 16 0" fill="none" stroke="#7a1f1a" stroke-width="2.5" stroke-linecap="round"/><path d="M16 30c4-6 12-6 16 0" fill="none" stroke="#c1502e" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <h3>Chicken Mole</h3>
+        <p>Chicken mole and other San Luis Potosi regional specialties.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#f5e6d0"/><circle cx="24" cy="24" r="10" fill="none" stroke="#7a1f1a" stroke-width="2.5"/><circle cx="24" cy="24" r="4" fill="#c1502e"/></svg>
+        <h3>Handmade Tortillas</h3>
+        <p>Pressed fresh on-site every day.</p>
+      </div>
+
+      <div class="service-card reveal">
+        <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#f5e6d0"/><path d="M16 32V18a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v14" fill="none" stroke="#7a1f1a" stroke-width="2.5"/><path d="M12 32h24" stroke="#c1502e" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <h3>Dine-In, Takeout &amp; Delivery</h3>
+        <p>Outdoor seating for dine-in, plus takeout and delivery.</p>
+      </div>
+
+    </div>
+
+    <div class="menu-photo-wrap reveal">
+      <a class="menu-photo-frame" href="photos/menu1.jpg" target="_blank" rel="noopener" aria-label="Open full-size photo of the menu board in a new tab">
+        <img src="photos/menu1.jpg" alt="Photographed chalkboard menu of Birrieria &amp; Taqueria La Huasteca, listing breakfast, specialties, birria, combos, drinks, desserts, family packs, and kids meals with prices" decoding="async">
+      </a>
+      <p class="menu-photo-caption">Our menu board, photographed in-restaurant. Tap or click the image to zoom in and read every item.</p>
+    </div>
+
+    <div class="menu-text reveal">
+      <h3>Full menu &amp; prices</h3>
+
+      <div class="menu-category">
+        <p class="menu-category-title">Birria</p>
+        <ul class="menu-items">
+          <li><span class="menu-item-name">Beef Birria Plate</span><span class="menu-item-fill"></span><span class="menu-item-price">$21.99</span></li>
+          <li><span class="menu-item-name">Beef Caldo de Birria</span><span class="menu-item-fill"></span><span class="menu-item-price">$21.99</span></li>
+          <li><span class="menu-item-name">Lamb Birria Plate</span><span class="menu-item-fill"></span><span class="menu-item-price">$23.99</span></li>
+          <li><span class="menu-item-name">Lamb Caldo de Birria</span><span class="menu-item-fill"></span><span class="menu-item-price">$23.99</span></li>
+          <li><span class="menu-item-name">Birria Taco</span><span class="menu-item-fill"></span><span class="menu-item-price">$7.99</span></li>
+          <li><span class="menu-item-name">Pizza Birria</span><span class="menu-item-fill"></span><span class="menu-item-price">$18.99</span></li>
+          <li><span class="menu-item-name">Birria Ramen</span><span class="menu-item-fill"></span><span class="menu-item-price">$16.99</span></li>
+          <li><span class="menu-item-name">Quesabirria Combo (1)</span><span class="menu-item-fill"></span><span class="menu-item-price">$21.99</span></li>
+          <li><span class="menu-item-name">Birria Tacos Combo (2)</span><span class="menu-item-fill"></span><span class="menu-item-price">$21.99</span></li>
+        </ul>
+      </div>
+
+      <div class="menu-category">
+        <p class="menu-category-title">Specialties</p>
+        <ul class="menu-items">
+          <li><span class="menu-item-name">Enchiladas Rioverdenses</span><span class="menu-item-fill"></span><span class="menu-item-price">$19.99</span></li>
+          <li><span class="menu-item-name">Enchiladas Potosinas</span><span class="menu-item-fill"></span><span class="menu-item-price">$19.99</span></li>
+          <li><span class="menu-item-name">Chile Verde Plate</span><span class="menu-item-fill"></span><span class="menu-item-price">$19.99</span></li>
+          <li><span class="menu-item-name">Chile Relleno Plate</span><span class="menu-item-fill"></span><span class="menu-item-price">$19.99</span></li>
+          <li><span class="menu-item-name">Menudo</span><span class="menu-item-fill"></span><span class="menu-item-price">$21.99</span></li>
+          <li><span class="menu-item-name">Mole Rojo</span><span class="menu-item-fill"></span><span class="menu-item-price">$21.99</span></li>
+          <li><span class="menu-item-name">Pozole</span><span class="menu-item-fill"></span><span class="menu-item-price">$19.99</span></li>
+          <li><span class="menu-item-name">Chilaquiles Rojos or Verdes</span><span class="menu-item-fill"></span><span class="menu-item-price">$17.99</span></li>
+          <li><span class="menu-item-name">Migada</span><span class="menu-item-fill"></span><span class="menu-item-price">$19.99</span></li>
+          <li><span class="menu-item-name">Street Taco</span><span class="menu-item-fill"></span><span class="menu-item-price">$4.59</span></li>
+          <li><span class="menu-item-name">Gordita</span><span class="menu-item-fill"></span><span class="menu-item-price">$8.99</span></li>
+          <li><span class="menu-item-name">Mulitas</span><span class="menu-item-fill"></span><span class="menu-item-price">$8.99</span></li>
+          <li><span class="menu-item-name">Sope</span><span class="menu-item-fill"></span><span class="menu-item-price">$8.99</span></li>
+          <li><span class="menu-item-name">Torta</span><span class="menu-item-fill"></span><span class="menu-item-price">$15.99</span></li>
+          <li><span class="menu-item-name">Burrito</span><span class="menu-item-fill"></span><span class="menu-item-price">$18.99</span></li>
+          <li><span class="menu-item-name">California Burrito</span><span class="menu-item-fill"></span><span class="menu-item-price">$18.99</span></li>
+          <li><span class="menu-item-name">Surf &amp; Turf Burrito</span><span class="menu-item-fill"></span><span class="menu-item-price">$18.99</span></li>
+          <li><span class="menu-item-name">Quesadilla</span><span class="menu-item-fill"></span><span class="menu-item-price">$18.99</span></li>
+          <li><span class="menu-item-name">Nachos</span><span class="menu-item-fill"></span><span class="menu-item-price">$18.99</span></li>
+          <li><span class="menu-item-name">Fries</span><span class="menu-item-fill"></span><span class="menu-item-price">$18.99</span></li>
+          <li><span class="menu-item-name">Rolled Tacos (5)</span><span class="menu-item-fill"></span><span class="menu-item-price">$12.99</span></li>
+        </ul>
+      </div>
+
+      <div class="menu-category">
+        <p class="menu-category-title">Sides &amp; Kids</p>
+        <ul class="menu-items">
+          <li><span class="menu-item-name">Sour Cream</span><span class="menu-item-fill"></span><span class="menu-item-price">$1.99</span></li>
+          <li><span class="menu-item-name">Kids Meal (2 Tacos)</span><span class="menu-item-fill"></span><span class="menu-item-price">$10.39</span></li>
+        </ul>
+      </div>
+
+      <p class="menu-note">Menu and prices as photographed in-restaurant and listed by third-party delivery/menu sites, call (858) 203-3902 to confirm current items, prices, and availability.</p>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section class="highlights" aria-labelledby="highlights-heading">
+    <h2 id="highlights-heading" class="visually-hidden">Why locals choose La Huasteca</h2>
+    <div class="highlights-grid">
+      <div class="highlight-item reveal">
+        <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 17.3l-6.2 3.6 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7z" fill="currentColor"/></svg>
+        <span class="highlight-num">4.7</span>
+        <span class="highlight-label">Google Rating</span>
+        <span class="highlight-sub">from 338 reviews</span>
+      </div>
+      <div class="highlight-item reveal">
+        <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="2"/></svg>
+        <span class="highlight-num">1st</span>
+        <span class="highlight-label">Dedicated Birrieria</span>
+        <span class="highlight-sub">in Pacific Beach</span>
+      </div>
+      <div class="highlight-item reveal">
+        <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 21V9l8-6 8 6v12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 21v-7h6v7" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span class="highlight-num">SLP</span>
+        <span class="highlight-label">San Luis Potosi Recipes</span>
+        <span class="highlight-sub">family-rooted heritage</span>
+      </div>
+      <div class="highlight-item reveal">
+        <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M8 12.5l2.5 2.5L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="highlight-num">Daily</span>
+        <span class="highlight-label">Handmade Tortillas</span>
+        <span class="highlight-sub">pressed on-site</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="gallery" aria-labelledby="gallery-heading">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">From Our Kitchen</span>
+      <h2 id="gallery-heading">A taste of La Huasteca</h2>
+      <p>Real dishes and real corners of our Pacific Beach location.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <figure>
+        <img src="photos/photo3.jpg" alt="Bowl of birria ramen with beef, cilantro, and onion in red consomme broth" decoding="async" width="600" height="600">
+        <figcaption>Birria Ramen</figcaption>
+      </figure>
+      <figure>
+        <img src="photos/photo2.jpg" alt="Quesabirria taco on a crisped corn tortilla, served with a cup of consomme and a lime wedge" decoding="async" width="600" height="600">
+        <figcaption>Quesabirria Taco</figcaption>
+      </figure>
+      <figure>
+        <img src="photos/photo5.jpg" alt="Outdoor patio seating with red umbrellas, a stone bar, and string lights on Turquoise St" decoding="async" width="551" height="490">
+        <figcaption>Outdoor patio seating</figcaption>
+      </figure>
+      <figure>
+        <img src="photos/photo4.jpg" alt="Cinnamon-sugar churros served at the restaurant" decoding="async" width="536" height="490">
+        <figcaption>Cinnamon-sugar churros</figcaption>
+      </figure>
+      <figure>
+        <img src="photos/photo6.jpg" alt="Storefront signage reading 'Birrieria Taqueria' above the stacked-stone entrance" decoding="async" width="311" height="230">
+        <figcaption>Our Turquoise St. entrance</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq" aria-labelledby="faq-heading">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Good to Know</span>
+      <h2 id="faq-heading">Frequently asked questions</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary>
+          What is birria, and which styles do you serve?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="faq-answer">
+          <p>Birria is a slow-cooked Mexican stew traditionally made with goat, though beef and lamb versions are common today. We serve both birria de res (beef) and birria de borrego (lamb), prepared using family recipes from San Luis Potosi, Mexico.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>
+          Do you offer dine-in, takeout, and delivery?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="faq-answer">
+          <p>Yes. We have outdoor seating for dine-in, plus takeout, and delivery through DoorDash, Grubhub, and UberEats.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>
+          What are your hours?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="faq-answer">
+          <p>Hours can vary, so please call ahead at (858) 203-3902 or check our current listings before you visit. A breakfast menu with chilaquiles and menudo is available, ask about morning hours when you call.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>
+          Is the menu handmade and made to order?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="faq-answer">
+          <p>Our tortillas are pressed by hand on-site every day, and our birria is slow-cooked using family recipes carried from San Luis Potosi, Mexico.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>
+          Where are you located?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </summary>
+        <div class="faq-answer">
+          <p>We're at 865 Turquoise St in North Pacific Beach, San Diego, CA 92109, see the map and directions below.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit" class="visit" aria-labelledby="visit-heading">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Visit Us</span>
+      <h2 id="visit-heading">Find us in North Pacific Beach</h2>
+    </div>
+    <div class="visit-grid">
+      <div class="visit-card reveal">
+        <ul class="visit-list">
+          <li>
+            <svg class="visit-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="2"/></svg>
+            <div>
+              <h3>Address</h3>
+              <p>865 Turquoise St<br>San Diego, CA 92109<br>Pacific Beach (North PB)</p>
+            </div>
+          </li>
+          <li>
+            <svg class="visit-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+            <div>
+              <h3>Phone</h3>
+              <p><a href="tel:+18582033902">(858) 203-3902</a></p>
+            </div>
+          </li>
+          <li>
+            <svg class="visit-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <div>
+              <h3>Hours</h3>
+              <p>Please call ahead or check current listings for today's hours.</p>
+              <p class="hours-note">Breakfast items (chilaquiles, menudo) available, ask about morning hours.</p>
+            </div>
+          </li>
+          <li>
+            <svg class="visit-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18" stroke="currentColor" stroke-width="2"/></svg>
+            <div>
+              <h3>Ordering</h3>
+              <p>Dine-in with outdoor seating, takeout, and delivery via DoorDash, Grubhub, and UberEats.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="map-panel reveal">
+        <svg class="map-pin" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4c-8 0-14 6-14 14 0 10 14 26 14 26s14-16 14-26c0-8-6-14-14-14z" fill="#7a1f1a"/><circle cx="24" cy="18" r="6" fill="#fbf3e6"/></svg>
+        <h3>865 Turquoise St</h3>
+        <p>San Diego, CA 92109</p>
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Birrieria%20%26%20Taqueria%20La%20Huasteca%2C%20865%20Turquoise%20St%2C%20San%20Diego%2C%20CA%2092109" target="_blank" rel="noopener noreferrer">
+          Get Directions
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-band" aria-labelledby="cta-heading">
+    <h2 id="cta-heading">Craving birria tonight?</h2>
+    <p>Call ahead for takeout, or stop by North Pacific Beach for dine-in with outdoor seating.</p>
+    <a class="btn btn-primary" href="tel:+18582033902">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="currentColor"/></svg>
+      Call (858) 203-3902
+    </a>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">La Huasteca</div>
+      <p style="max-width:280px; font-size:0.92rem;">Birrieria &amp; Taqueria, San Luis Potosi family recipes in Pacific Beach, San Diego.</p>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#visit">Visit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="tel:+18582033902">(858) 203-3902</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Birrieria%20%26%20Taqueria%20La%20Huasteca%2C%20865%20Turquoise%20St%2C%20San%20Diego%2C%20CA%2092109" target="_blank" rel="noopener noreferrer">865 Turquoise St, San Diego, CA 92109</a></li>
+          <li><a href="https://www.yelp.com/biz/birrieria-and-taqueria-la-huasteca-san-diego" target="_blank" rel="noopener noreferrer">Read reviews on Yelp</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Birrieria &amp; Taqueria La Huasteca. All rights reserved.</span>
+    <span>Pacific Beach, San Diego, CA</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    "use strict";
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('.reveal').forEach(function (el) {
+        el.classList.add('is-visible');
+      });
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      observer.observe(el);
+    });
+  })();
+</script>
+</body>
+</html>
